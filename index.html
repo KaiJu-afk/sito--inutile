@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Il Bottone dell'Inutilità</title>
+  <style>
+    body {
+      background-color: #fefefe;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    #uselessButton {
+      padding: 20px 40px;
+      font-size: 24px;
+      background-color: #ff69b4;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #uselessButton:hover {
+      background-color: #ff1493;
+    }
+
+    #message {
+      margin-top: 30px;
+      font-size: 20px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Benvenuto nel sito più inutile del mondo</h1>
+  <button id="uselessButton">Cliccami!</button>
+  <div id="message">Hai cliccato 0 volte.</div>
+
+  <script>
+    const button = document.getElementById('uselessButton');
+    const message = document.getElementById('message');
+    let count = 0;
+    const phrases = [
+      "Hai perso 0.3 secondi della tua vita.",
+      "Bravo, hai cliccato ancora.",
+      "Questo non serve a nulla.",
+      "Continua pure, non succederà niente.",
+      "Stai ancora cliccando?",
+      "Ogni click ti avvicina al nulla.",
+      "Complimenti, sei al livello 0.",
+      "Hai sbloccato... assolutamente niente!",
+      "Il bottone ti sta giudicando.",
+      "Ancora uno e forse succede qualcosa... o no."
+    ];
+
+    button.addEventListener('click', () => {
+      count++;
+      const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+      message.textContent = `Hai cliccato ${count} volte. ${randomPhrase}`;
+    });
+  </script>
+
+</body>
+</html>
